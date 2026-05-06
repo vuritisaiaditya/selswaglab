@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import utils.CommonMethods;
+
 public class CheckOutOverview {
 
     WebDriver driver = null;
@@ -22,6 +24,7 @@ public class CheckOutOverview {
 
     public CheckOutOverview printTotalAmountAndFinish() {
         String totalText = getSummaryTotalLabel().getText();
+        new CommonMethods(driver).captureScreenshot("checkout_overview");
         String digits = totalText.replaceAll("[^0-9]", "");
         int totalAmount = digits.isEmpty() ? 0 : Integer.parseInt(digits);
         System.out.println("Total amount: " + totalAmount);

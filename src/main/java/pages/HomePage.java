@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import utils.CommonMethods;
+
 public class HomePage {
 
     private WebDriver driver = null;
@@ -25,6 +27,7 @@ public class HomePage {
     }
 
     public HomePage AddToCart() throws InterruptedException {
+        new CommonMethods(driver).captureScreenshot("home_page");
         getSwagLabBackpac().click();
         Thread.sleep(2000);
         getSauceLabsBoltTShirtButton().click();

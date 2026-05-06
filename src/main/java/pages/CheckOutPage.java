@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import utils.CommonMethods;
+
 public class CheckOutPage {
 
     private WebDriver driver = null;
@@ -29,12 +31,12 @@ public class CheckOutPage {
     }
 
     public CheckOutPage FillCheckoutInformation() throws InterruptedException {
+        new CommonMethods(driver).captureScreenshot("checkout_page");
         getFirstNameField().sendKeys("Aditya");
-        Thread.sleep(2000);
         getLastNameField().sendKeys("Vuriti");
-        Thread.sleep(2000);
         getPostalCodeField().sendKeys("400001");
-        Thread.sleep(2000);
+        Thread.sleep(500);
+        new CommonMethods(driver).captureScreenshot("checkout_page");
         getContinueButton().click();
         Thread.sleep(5000);
         return this;
